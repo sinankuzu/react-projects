@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Old+Standard+TT:ital@1&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Amatic SC', cursive;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-image:linear-gradient(to bottom, rgb(175,225,248),white)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  font-size: 23px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color:rgb(23,27,31);
+  color:white;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+}
+
+ul li{
+  padding: 25px;
+}
+
+ul li:hover{
+  background-color:rgb(175,225,248) ;
+}
+
+.header{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+.container{
+  margin-top: 30px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container{
+ width: 1000px;
+  
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
+
+
+.my-card{
+  width: 280px;
+  height: 250px;
+  border-radius: 10px;
+  background-color:rgb(23,27,31);
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+
+.city{
+  font-size: 25px;
+  margin: 10px 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.image img{
+  width:260px;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  margin: auto;
+}
+
+.text{
+  background-color: rgb(23,27,31,0.6);
+  position: absolute;
+  bottom: -200px;
+  padding:10px 10px;
+  opacity: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+ 
+}
+
+ .my-card:hover{
+  filter: grayscale(100%);
+  transition: 0.5s;
+ }
+
+.my-card:hover > .text{
+  bottom: 0;
+ opacity: 1;
+  transition:1s;
+  
+}
+
+@media(max-width:832px){
+  .grid-container{
+    grid-template-columns: repeat(2,1fr);
+    justify-items:center;
+}
+}
+
+@media(max-width:570px){
+  .grid-container{
+    grid-template-columns: repeat(1,1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  ul li{
+    padding: 10px;
+    font-size: 16px;
   }
 }
+
+
+
+
+
